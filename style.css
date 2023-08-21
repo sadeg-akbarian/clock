@@ -5,6 +5,7 @@
 }
 
 :root {
+  --page-background-color: gold;
 }
 
 html {
@@ -18,4 +19,61 @@ body {
   height: 100vh;
   background-color: var(--page-background-color);
   color: var(--page-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 50vh;
+  width: 40vh;
+}
+
+.analogClock {
+  width: 40vh;
+  height: 40vh;
+  background-color: white;
+  border: 0.4vh solid black;
+  border-radius: 50%;
+  box-shadow: 0.2vh 0.2vh 0.5vh black;
+}
+
+.clockMiddlePoint {
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+  background-color: black;
+  transform: translate(19vh, 19vh);
+}
+
+.hoursPointer {
+  width: 0.6vh;
+  height: 10vh;
+  background-color: black;
+  border-radius: 0.3vh;
+  transform-origin: 50% 100%;
+  transform: translate(19.7vh, 8vh) rotate(10deg);
+}
+
+.minutesPointer {
+  width: 0.6vh;
+  height: 19vh;
+  background-color: black;
+  border-radius: 0.3vh;
+  transform-origin: 50% 100%;
+  transform: translate(19.7vh, -11vh) rotate(20deg);
+}
+
+.secondsPointer {
+  width: 0.26vh;
+  height: 19vh;
+  background-color: black;
+  transform-origin: 50% 100%;
+  transform: translate(19.87vh, -30vh) rotate(30deg);
+}
+
+.digitalClock {
+  text-align: center;
+  font-size: 4vh;
+  margin-block: 3vh;
 }
