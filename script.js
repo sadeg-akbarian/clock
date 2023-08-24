@@ -1,21 +1,24 @@
 function logTime() {
   const now = Date();
   const time = now.slice(16, 24);
-  const hours = time.slice(0, 2);
-  const minutes = time.slice(3, 5);
+
   const seconds = time.slice(-2);
+  const minutes = time.slice(3, 5);
+  const hours = time.slice(0, 2);
 
-  const hoursInDegree = parseInt(hours) * 30;
-  const minutesInDegree = parseInt(minutes) * 6;
   const secondsInDegree = parseInt(seconds) * 6;
+  const exactMinutes = parseInt(minutes) + parseInt(seconds) / 60;
+  const minutesInDegree = exactMinutes * 6;
+  const exactHours = parseInt(hours) + exactMinutes / 60;
+  const hoursInDegree = exactHours * 30;
 
-  const hoursPointer = document.querySelector("#hoursPointer");
-  const minutesPointer = document.querySelector("#minutesPointer");
   const secondsPointer = document.querySelector("#secondsPointer");
+  const minutesPointer = document.querySelector("#minutesPointer");
+  const hoursPointer = document.querySelector("#hoursPointer");
 
-  hoursPointer.style.transform = `translate(19.7vh, 8vh) rotate(${hoursInDegree}deg`;
-  minutesPointer.style.transform = `translate(19.7vh, -11vh) rotate(${minutesInDegree}deg)`;
   secondsPointer.style.transform = `translate(19.87vh, -30vh) rotate(${secondsInDegree}deg)`;
+  minutesPointer.style.transform = `translate(19.7vh, -11vh) rotate(${minutesInDegree}deg)`;
+  hoursPointer.style.transform = `translate(19.7vh, 8vh) rotate(${hoursInDegree}deg`;
 
   const digital = document.querySelector("#digital");
 
